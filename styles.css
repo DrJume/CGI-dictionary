@@ -1,0 +1,46 @@
+/* 
+  Autor: Julian Meinking
+  Datum: 28.02.2020
+*/
+
+table.data-table {
+  border-collapse: collapse;
+  border: 2px solid black;
+  width: 80%px;
+  text-align: center;
+}
+
+table.data-table th {
+  font-size: 1.2rem;
+}
+
+table.data-table th, table.data-table td {
+  border: 1px solid black;
+  padding: 5px 5px 5px 5px;
+}
+
+.error {
+  color: red;
+  border: 1px solid red;
+  padding: 3px;
+  margin: 5px 0 5px 0;
+  display: inline-block;
+}
+
+.form-control {
+  display: inline-block;
+  padding: 5px;
+  border: 1px dotted black;
+}
+
+.form-control table {
+  border: none;
+}
+
+.form-control table td {
+  padding: 5px 5px 5px 5px;
+}
+
+.spacer {
+  margin: 0 6px 0 6px;
+}
