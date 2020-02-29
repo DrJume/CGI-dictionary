@@ -16,6 +16,21 @@
 char search[DICT_MAX_STRLEN + 1] = "";
 char sortBy[11] = "";
 
+void urldecode(char *url) {
+  for (int i = 0; url[i] != '\0'; i++) {
+    if (url[i] == '+')
+      url[i] = ' ';
+    if (url[i] == '%') {
+      char escaped_char[3] = {url[i + 1], url[i + 2], 0}; // hex substring
+
+      url[i] = (char)strtol(escaped_char, NULL, 16); // decode hex string to char
+
+      memmove(url + i + 1, url + i + 3, strlen(url) - (i + 3)); // move rest over by 2
+      memset(url + (strlen(url) - 2), '\0', 2);                 // and fill remains with \0
+    }
+  }
+}
+
 void GET(char *env[]) {
   html_Head();
 
@@ -269,6 +284,7 @@ int main(int argc, char *argv[], char *env[]) {
 
       tok = strtok(NULL, "&");
       if (tok != NULL) {
+        urldecode(tok);
         strncpy(search, tok, DICT_MAX_STRLEN);
       } else {
         strcpy(search, "");

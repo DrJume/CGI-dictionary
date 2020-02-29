@@ -3,6 +3,8 @@
   Datum: 28.02.2020
 */
 
+#define _GNU_SOURCE // needed for strcasestr
+
 #include <stdio.h>
 #include <string.h>
 
@@ -62,7 +64,7 @@ void html_FormCreate(char *search, char *sortBy) {
   puts("<br>");
 
   // Search and sort form
-  puts("<form action=\"\" method=\"GET\" enctype=\"text/plain\">");
+  puts("<form action=\"\" method=\"GET\" enctype=\"application/x-www-form-urlencoded\">");
   puts("<table>");
 
   puts("<tr><td>");

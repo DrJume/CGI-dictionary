@@ -16,7 +16,7 @@ dictionary.o: dictionary.c
 	gcc $(CFLAGS) dictionary.c
 
 html_snippets.o: html_snippets.c
-	gcc $(CFLAGS) -D_GNU_SOURCE html_snippets.c
+	gcc $(CFLAGS) html_snippets.c
 
 clean:
 	rm *.o index.cgi
